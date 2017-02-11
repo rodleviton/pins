@@ -1,0 +1,75 @@
+.notification
+  position: fixed
+  transform: translate3d(0, 0, 0)
+  top: 100px
+  right: 15px
+  left: 15px
+  z-index: 200
+  padding: 10px 20px 10px 10px
+  min-width: 160px
+  max-width: 400px
+  display: inline-block
+  font-weight: 300
+  background: #fff
+  border: 1px solid #eee
+  overflow: hidden
+  border-radius: 3px
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1)
+  box-shadow: 0 19px 38px rgba(0,0,0,0.05), 0 15px 12px rgba(0,0,0,0.07)
+  vertical-align: middle
+
+  @media screen and (min-width: 720px)
+    left: auto
+
+  p
+    margin-left: 45px
+    // display: inline-block;
+    // vertical-align: middle
+
+    strong
+      font-weight: 600
+
+  img
+    display: inline-block
+    vertical-align: middle
+    float: left
+    margin-right: 10px
+    width: 30px
+    height: 30px
+    border-radius: 50%
+
+.animated
+  // animation-delay: 1000ms
+  animation-duration: 850ms
+  animation-fill-mode: both
+
+@keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -1000px, 0);
+  }
+}
+
+.fadeOutUpBig {
+  animation-name: fadeOutUpBig;
+}
+
+.fadeInUpBig {
+  animation-name: fadeInUpBig;
+}
