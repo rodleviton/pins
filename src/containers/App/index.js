@@ -50,7 +50,7 @@ class App extends Component {
             <div className="brand">
               <a href="/" className="logo"></a>
             </div>
-            <a href="https://github.com" title="Github Repo" target="_blank" className="github"></a>
+            <a href="https://github.com/rodleviton" title="Rod Leviton Github Repo" target="_blank" className="github"></a>
           </header>
 
           <LoginRoute path="/login" component={Login} />

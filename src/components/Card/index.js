@@ -3,11 +3,6 @@ import ImageLoader from './ImageLoader';
 import './Card.styl'
 
 class Card extends Component {
-  constructor(props, context) {
-    super(props, context);
-    console.log(props);
-  }
-
   _getMetadata() {
     const metadata = this.props.metadata.find((item) => {
       return item['.key'] === this.props.pin.id
@@ -16,8 +11,8 @@ class Card extends Component {
     return metadata || {};
   }
 
-  goToPin() {
-    window.open(this.props.pin.url, '_blank');
+  goToUrl() {
+    window.open(this._getMetadata().url, '_blank');
   }
 
   _isLoading() {
@@ -43,17 +38,17 @@ class Card extends Component {
         <div className="card-content">
           <h5>{this._getMetadata().category}</h5>
           <h2>{this._getMetadata().title}</h2>
-          <p>{this._getMetadata().description}</p>
-          <button className="btn-card" onClick={this.goToPin.bind(this)}>View</button>
+          <p dangerouslySetInnerHTML={{ __html: this._getMetadata().description}}></p>
+          <button className="btn-card" onClick={this.goToUrl.bind(this)}>View</button>
         </div>
 
         <div className="card-footer">
           <div className="card-action">
-            <button className="likes" onClick={this.goToPin.bind(this)}></button>
+            <button className="likes" onClick={this.goToUrl.bind(this)}></button>
             <div className="counter"><div className="arrow"></div>{this.props.pin.counts.likes}</div>
           </div>
           <div className="card-action">
-            <button className="comments" onClick={this.goToPin.bind(this)}></button>
+            <button className="comments" onClick={this.goToUrl.bind(this)}></button>
             <div className="counter"><div className="arrow"></div>{this.props.pin.counts.comments}</div>
           </div>
         </div>

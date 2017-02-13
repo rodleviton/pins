@@ -91,7 +91,10 @@ class Profile extends Component {
   fetchUserData() {
     Pinterest.getUser(response => {
       this.setState({ user: response.data });
-      this.startNotifications()
+
+      setTimeout(() => {
+        this.startNotifications();
+      }, 2000);
     })
   }
 
