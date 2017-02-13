@@ -1,4 +1,4 @@
-# pinterest
+# pins
 
 A demo site example integrating with the [Pinterest](https://developers.pinterest.com) developer API and [Firebase](https://firebase.google.com).
 
